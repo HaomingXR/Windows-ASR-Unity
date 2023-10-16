@@ -9,7 +9,16 @@ public class Demo : MonoBehaviour
     void Awake()
     {
         DictationAPI.Init();
+    }
+
+    void OnEnable()
+    {
         DictationAPI.OnRecognize += OnWordRecognized;
+    }
+
+    void OnDisable()
+    {
+        DictationAPI.OnRecognize -= OnWordRecognized;
     }
 
     void Start()
@@ -22,8 +31,8 @@ public class Demo : MonoBehaviour
         DictationAPI.Terminate();
     }
 
-    private void OnWordRecognized(string text)
+    private void OnWordRecognized(string str)
     {
-        resultText.text += text + " ";
+        resultText.text += str + " ";
     }
 }

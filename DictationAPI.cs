@@ -1,6 +1,6 @@
 using UnityEngine.Windows.Speech;
 
-public class DictationAPI
+public static class DictationAPI
 {
     private static DictationRecognizer dictationRecognizer;
 
